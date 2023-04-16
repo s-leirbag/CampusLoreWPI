@@ -24,7 +24,7 @@ CampusLore showcases the rich history, hidden gems, and interesting lores of WPI
 
 ## How we built it
 
-We used the Godot game engine and the Tiled tilemapping software. We coded the game with Godot's custom language GDScript. We used Krita to edit assets and Reaper to write our own OST!
+We used the Godot game engine and the Tiled tile-mapping software. We coded the game with Godot's custom language GDScript. We used Krita to edit assets and Reaper to write our own OST!
 
 ## Challenges we ran into
 
@@ -32,7 +32,7 @@ We started by using Phaser 3 (HTML5 game framework) but quickly found it had lim
 
 And even for a game of this scope, developing without a game engine is very complex. We switched to the Godot engine halfway through and were able to implement our ideas much easier.
 
-Also, mapmaking is laborous.
+Also, mapmaking is laborious.
 
 ## Accomplishments that we're proud of
 - Learned and utilized a game engine
@@ -45,14 +45,14 @@ Also, mapmaking is laborous.
 
 Throughout the development process, we gained valuable experience in game design, pixel art creation, and storytelling.
 
-Besides the technical tools used to develop the game, we also learned the importance of brainstorming, taking feedback, effective communication and collaboration within the team to bring together diverse skill sets and create a cohesive gaming experience.
+Besides the technical tools used to develop the game, we also learned the importance of brainstorming, taking feedback, effective communication, and collaboration within the team to bring together diverse skill sets and create a cohesive gaming experience.
 
 ## What's next for CampusLore
 
 In the short run, we plan to complete our own campus by adding all the maps we designed and didn’t have the time to add.
 
 In the long run, some potential additions we will consider include:
-- Add NPC's, animations, and rich dialogues
+- Add NPC's, animations, and rich dialogues.
 - Integrate deep learning models to allow other students to add maps of their own campus simply by uploading pictures. 
 - Introduce multiplayer options, allowing friends to explore the campus world together.
-- Build additional gameplay features ranging from time-limited challenges to inner building features to further enhance the player experience
+- Build additional gameplay features ranging from time-limited challenges to inner building features to further enhance the player experience.
