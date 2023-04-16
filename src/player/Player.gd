@@ -1,11 +1,13 @@
 class_name Player
 extends CharacterBody2D
 
-var speed := 150.0
+var speed := 600.0
 var dir := Vector2.UP
 var interact_areas_entered := 0
+var interact_id := ""
 
 @onready var animPlayer := get_node("AnimationPlayer") as AnimationPlayer
+@onready var dialogue := get_node("Dialogue") as Control
 
 
 func _ready() -> void:
@@ -13,10 +15,9 @@ func _ready() -> void:
 	Events.connect("interact_area_exited", _on_interact_area_exited)
 
 
-
-func _physics_process(_delta: float) -> void:
-	if Input.is_action_pressed("interact") and interact_areas_entered > 0:
-		Events.emit_signal("scene_changed", Globals.Scene2)
+func welcome_anim():
+	interact_id = 'welcome'
+	$StateMachine.transition_to("Dialogue")
 
 
 func getMoveDir() -> Vector2:
@@ -26,13 +27,22 @@ func getMoveDir() -> Vector2:
 	)
 
 
-func _on_interact_area_entered(body):
+func _on_interact_area_entered(body, id):
 	if body == self:
+		interact_id = id
 		interact_areas_entered += 1
-		print("entered!")
 
 
-func _on_interact_area_exited(body):
+func _on_interact_area_exited(body, id):
 	if body == self:
+		interact_id = id
 		interact_areas_entered -= 1
-		print("exited!")
+
+
+func setIsActive(newIsActive):
+	set_physics_process(!newIsActive)
+	$StateMachine.setIsActive(newIsActive)
+
+
+func setFrame(frame):
+	$Sprite2D.frame = frame

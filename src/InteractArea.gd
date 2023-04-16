@@ -1,6 +1,9 @@
 extends Area2D
 
 
+@export var id := ""
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -12,8 +15,8 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	Events.emit_signal("interact_area_entered", body)
+	Events.emit_signal("interact_area_entered", body, id)
 
 
 func _on_body_exited(body):
-	Events.emit_signal("interact_area_exited", body)
+	Events.emit_signal("interact_area_exited", body, id)

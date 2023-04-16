@@ -1,16 +1,23 @@
 extends Node2D
 
-@onready var scene := $Scene1
+@onready var scene := $SceneQuad
+@onready var player := $Player
 
+var tween: Tween
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	Events.connect("scene_changed", _on_scene_changed)
+	
+	$AnimationPlayer.play("where_we_dropping")
+#	player.welcome_anim()
+#	player.position = Vector2(2350, 2080)
+#	player.visible = true
+#	player.setIsActive(true)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func _free_anim_nodes():
+	$Plane.queue_free()
+	$CrashSound.queue_free()
 
 
 func _on_scene_changed(newScene) -> void:

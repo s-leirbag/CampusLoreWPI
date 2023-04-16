@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c3prq4pf0bl1j"]
+
+[node name="Scene" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+scale = Vector2(4, 4)
+format = 2
+layer_0/name = "Below"
+layer_1/name = "Collision"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
+
+[node name="InteractAreas" type="Node2D" parent="."]

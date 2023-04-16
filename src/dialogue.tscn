@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=3 uid="uid://c723xv4iq87ig"]
+
+[ext_resource type="Script" path="res://src/dialogue.gd" id="1_id28h"]
+[ext_resource type="Texture2D" uid="uid://ywekqw657plb" path="res://assets/big_box.png" id="1_rclh0"]
+[ext_resource type="Texture2D" uid="uid://dp1xwlo0pfdvx" path="res://assets/dialogue_box.png" id="1_yfsg0"]
+[ext_resource type="FontFile" uid="uid://s051jnrlc87j" path="res://assets/pokemon_pixel_font.ttf" id="2_mvcf1"]
+
+[sub_resource type="Theme" id="Theme_jeuwd"]
+default_font = ExtResource("2_mvcf1")
+
+[node name="Dialogue" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_id28h")
+
+[node name="TitleImg" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 2
+offset_left = 72.0
+offset_top = 64.0
+offset_right = 832.0
+offset_bottom = 634.0
+texture = ExtResource("1_rclh0")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Title" type="Label" parent="TitleImg"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = 33.0
+offset_right = 126.0
+offset_bottom = 56.0
+scale = Vector2(8, 8)
+theme = SubResource("Theme_jeuwd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "DANIEL'S
+HALL"
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 680.0
+offset_right = 1847.0
+offset_bottom = 1004.0
+
+[node name="InfoImg" type="TextureRect" parent="VBox"]
+texture_filter = 1
+layout_mode = 2
+texture = ExtResource("1_yfsg0")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Info" type="Label" parent="VBox/InfoImg"]
+layout_mode = 0
+offset_left = 108.0
+offset_top = 68.0
+offset_right = 242.0
+offset_bottom = 91.0
+scale = Vector2(7, 7)
+theme = SubResource("Theme_jeuwd")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Freshman dorm built in 1962"

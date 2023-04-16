@@ -14,6 +14,9 @@ func physics_update(_delta: float) -> void:
 	var collision : KinematicCollision2D = owner.move_and_collide(owner.velocity)
 	if collision:
 		state_machine.transition_to("Idle")
+	
+	if Input.is_action_just_pressed("interact") and owner.interact_areas_entered > 0:
+		state_machine.transition_to("Dialogue")
 
 func enter(_msg: Dictionary = {}) -> void:
 	owner.animPlayer.play("walk_" + Utils.dirToDirName(owner.dir))

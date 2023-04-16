@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://bimhm02ai65a4"]
+[gd_scene load_steps=14 format=3 uid="uid://bimhm02ai65a4"]
 
 [ext_resource type="Script" path="res://src/player/Player.gd" id="1_v4uv6"]
 [ext_resource type="Texture2D" uid="uid://hjys24fdppld" path="res://assets/player.png" id="2_iy02f"]
 [ext_resource type="Script" path="res://lib/StateMachine/StateMachine.gd" id="3_woo1w"]
 [ext_resource type="Script" path="res://src/player/Idle.gd" id="4_7m02w"]
 [ext_resource type="Script" path="res://src/player/Walk.gd" id="5_4bmq2"]
+[ext_resource type="PackedScene" uid="uid://c723xv4iq87ig" path="res://src/dialogue.tscn" id="6_k18vf"]
+[ext_resource type="Script" path="res://src/player/Dialogue.gd" id="6_tlu3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ke1wa"]
 size = Vector2(16, 16)
@@ -86,6 +88,7 @@ _data = {
 }
 
 [node name="Player" type="CharacterBody2D"]
+scale = Vector2(4, 4)
 script = ExtResource("1_v4uv6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -94,7 +97,6 @@ position = Vector2(2.08165e-12, -8)
 texture = ExtResource("2_iy02f")
 hframes = 4
 vframes = 4
-frame = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ke1wa")
@@ -114,6 +116,17 @@ script = ExtResource("4_7m02w")
 [node name="Walk" type="Node" parent="StateMachine"]
 script = ExtResource("5_4bmq2")
 
+[node name="Dialogue" type="Node" parent="StateMachine"]
+script = ExtResource("6_tlu3d")
+
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Dialogue" parent="." instance=ExtResource("6_k18vf")]
+visible = false
+offset_left = -240.0
+offset_top = -135.0
+offset_right = -240.0
+offset_bottom = -135.0
+scale = Vector2(0.25, 0.25)
 
 [connection signal="ready" from="." to="StateMachine" method="on_owner_ready"]

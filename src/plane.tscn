@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dxrvt5xmmqnov"]
+
+[ext_resource type="Texture2D" uid="uid://whu8q58ns0d5" path="res://assets/plane.png" id="1_4lhmm"]
+
+[node name="Plane" type="Sprite2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("1_4lhmm")
