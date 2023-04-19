@@ -26,3 +26,11 @@ func _on_scene_changed(newScene) -> void:
 	scene = newScene.instantiate()
 	add_child(scene)
 	move_child(scene, 0)
+
+
+func _on_music_intro_finished():
+	$Music.play()
+
+
+func _on_music_finished():
+	$Music.play()

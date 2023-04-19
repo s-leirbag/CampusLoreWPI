@@ -5,9 +5,16 @@ var TILE_SIZE := 16
 var INFO := {
 	"welcome": {
 		"title": "ARRIVED AT:\nWPI",
-		"info": "Welcome to WPI!",
+		"info": "Welcome to WPI!\nHit space to continue.",
 		"random": [
 			"Arrow keys to walk. Space to interact."
+		]
+	},
+	"credits": {
+		"title": "CAMPUS LORE\nCREDITS",
+		"info": "Howard Chao, Felix Ng, Gabriel Shiu.\nWPI '26",
+		"random": [
+			"Made at HackDartmouth VIII 2023!"
 		]
 	},
 	"harrington": {
